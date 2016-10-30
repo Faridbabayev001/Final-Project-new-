@@ -10,6 +10,7 @@ use App\User;
 use Auth;
 class AdminController extends Controller
 {
+  //SƏndə də boş construktor, kommentlər yox, heç nə anlamaq olmur, Lalədə də həmin proyetdi hə ?
   public function _construct()
   {
 
