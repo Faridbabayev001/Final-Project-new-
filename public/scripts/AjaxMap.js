@@ -68,6 +68,7 @@ $.ajax({
                  icon:src,
              });
              markers.push(marker);
+
            };
              var info = new google.maps.InfoWindow();
              function manyInfo(mark, infowindow) {
@@ -79,10 +80,14 @@ $.ajax({
            }
            for (var i = 0; i < markers.length; i++) {
                google.maps.event.addListener(markers[i], 'click', function() {
+                   map.setZoom(9);
                    manyInfo(this, info);
+
+                     map.setCenter(markers.getPosition());
                    console.log("click");
                });
            }
+
            var markerCluster = new MarkerClusterer(map, markers, {
              imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m',
          });

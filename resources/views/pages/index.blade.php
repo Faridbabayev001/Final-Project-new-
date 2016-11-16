@@ -105,8 +105,9 @@
                 <div class="news-location col-lg-12">
                   <p><i class="fa fa-map-marker"></i> {{$data->location}}</p>
                 </div>
-                <div class="news-stats col-lg-12">
-                  <ul class="list-inline">
+                                {{-- thumbnail icons
+                 <div class="news-stats col-lg-12">
+                  {{-- <ul class="list-inline">
                     <li><i class="fa fa-eye"></i> {{$data->view}}</li>
                     <li><i class="fa fa-calendar"></i>
                       @if(!$diff->d == 0 && $diff->m == 0)
@@ -119,6 +120,7 @@
                     </li>
                   </ul>
                 </div>
+                            end thumbnail icons  --}}
               </div>
               </div>
             @endif
