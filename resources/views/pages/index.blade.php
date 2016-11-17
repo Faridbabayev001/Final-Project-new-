@@ -23,21 +23,21 @@
        <div class="col-lg-12 padding0">
            <div id="searchBoxDrag">
 
-               <div id="moveButton">
+               {{-- <div id="moveButton">
                      <i class="fa fa-arrows fa-2x"></i>
-               </div>
-               <div id="searchButton" class="index3" data-index='1'>
+               </div> --}}
+               {{-- <div id="searchButton" class="index3" data-index='1'>
                    <i class="fa fa-search-minus fa-2x"></i>
-               </div>
-               <div id="infoButton" class='index3' data-index='2'>
+               </div> --}}
+               {{-- <div id="infoButton" class='index3' data-index='2'>
                    <i class="fa fa-info fa-2x"></i>
-               </div>
+               </div> --}}
 
             <form id="mapSearch" class="form-inline" action="" method="POST">
-             <div class="searchpart clickedVer" data-info='1'>
+             {{-- <div class="searchpart clickedVer" data-info='1'> --}}
                  <ul>
                    <li>
-                       <label> Şəhər/region:</label>
+                       <label> Şəhər/region :</label>
                        <input id="Loc" type="text" class="hidden" name="keyword" value="all">
                        <select class="Test" id="acar">
                          <option name="location" value="all">Hamisi</option>
@@ -47,7 +47,7 @@
                        </select>
                    </li>
                      <li>
-                       <label> Istek/Destek:</label>
+                       <label> Istek/Destek :</label>
                        <input id="Type" type="text" class="hidden" name="city" value="all">
                        <select class="Test" id="seher">
                          <option  name="type" value="all">Hamisi</option>
@@ -56,7 +56,7 @@
                        </select>
                      </li>
                      <li>
-                       <label> Nov:</label><br>
+                       <label> Nov :</label><br>
                        <input id="Nov" type="text" class="hidden" name="category" value="all">
                        <select class="Test" id="kategory">
                          <option  name="nov" value="all">Hamisi</option>
@@ -66,11 +66,11 @@
                        </select>
                    </li>
                  </ul>
-             </div>
+             {{-- </div> --}}
            </form>
-           <div class="infopart clickedVer" data-info='2'>
+           {{-- <div class="infopart sclickedVer" data-info='2'>
              <p>This is map info content. You can add html content, image etc.. into this area. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
-           </div>
+           </div> --}}
 
            </div>
 

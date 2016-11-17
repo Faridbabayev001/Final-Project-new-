@@ -54,12 +54,13 @@
 #searchBoxDrag{
     top:7%;
     left: 2%;
-    width: 240px;
-    height: 300px;
+    width: 230px;
+    height: 250px;
     background-color:rgba(52,73,94,0.9);
     z-index: 999;
     position: absolute;
     color: #efefef;
+     cursor: move;
     ul{
         clear: both;
         padding-left: 25px;
@@ -77,26 +78,26 @@
             }
         }
     }
-    .infopart{
-        display: none;
-    }
-    #moveButton, #searchButton, #infoButton{
-        padding: 8px 0 8px 15px;
-        width:60px;
-        height:45px;
-        background-color:#28353d;
-        float: left;
-    }
-    #moveButton{
-        cursor: move;
-    }
-    #searchButton{
-        background: rgba(52,73,94,0.9);
-        background: transparent;
-    }
-    #infoButton{
-        padding: 8px 0 8px 25px;
-    }
+    //.infopart{
+    //     display: none;
+    // }
+    // #moveButton, #searchButton, #infoButton{
+    //     padding: 8px 0 8px 15px;
+    //     width:60px;
+    //     height:45px;
+    //     background-color:#28353d;
+    //     float: left;s
+    // }
+    // #moveButton{
+    //     cursor: move;
+    // }
+    // #searchButton{
+    //     background: rgba(52,73,94,0.9);
+    //     background: transparent;
+    // }
+    // #infoButton{
+    //     padding: 8px 0 8px 25px;
+    // }
     p{
         padding: 10px;
         clear: both;

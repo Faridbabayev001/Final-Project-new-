@@ -74,23 +74,27 @@ $.ajax({
              function manyInfo(mark, infowindow) {
              infowindow.setContent(mark.content);
              infowindow.open(map, mark);
-             markers.addListener('closeclick', function() {
+             marker.addListener('closeclick', function() {
                  infowindow.setMarker(null);
              });
+
            }
            for (var i = 0; i < markers.length; i++) {
                google.maps.event.addListener(markers[i], 'click', function() {
-                   map.setZoom(9);
+                    map.setZoom(15);
                    manyInfo(this, info);
-
-                     map.setCenter(markers.getPosition());
-                   console.log("click");
+                  map.setCenter(marker.getPosition());
+               });
+               google.maps.event.addListener(markers[i], 'closeclick', function() {
+                  alert("a");
                });
            }
 
            var markerCluster = new MarkerClusterer(map, markers, {
              imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m',
+             maxZoom:8
          });
+
          },
   // timeout: 3000,
   beforeSend:function(){
@@ -100,7 +104,7 @@ $.ajax({
     $('.Load').addClass('closeLoad');
   },
 });
-
+    // <- ============ CHANGE FUNC FOR MAP WITH AJAX =========== ->
   $('.Test').change(function(event) {
     $.ajax({
       timeout: 3000,
@@ -119,7 +123,7 @@ $.ajax({
         markers = [];
         var myLatlng = new google.maps.LatLng(40.100,48.800);
                var mapOptions = {
-                   zoom: 8,
+                   zoom: 9,
                    center: myLatlng,
                    scrollwheel: false,
                    streetViewControl:false,
@@ -164,12 +168,14 @@ $.ajax({
                for (var i = 0; i < markers.length; i++) {
                    google.maps.event.addListener(markers[i], 'click', function() {
                        manyInfo(this, info);
-                       console.log("click");
                    });
                }
+
                var markerCluster = new MarkerClusterer(map, markers, {
                  imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m',
+
              });
+
              },
       // timeout: 3000,
       beforeSend:function(){
