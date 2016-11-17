@@ -45,35 +45,50 @@ $.ajax({
            var map = new google.maps.Map(document.getElementById('infoMap'), mapOptions);
            var marker;
            for ( i = 0; i < data['data'].length; i++) {
-             var src;
-             if( (data['data'][i]['type_id']) == 2) {
-                src= "/image/green-icon.png";
-             }else if (data['data'][i]['type_id'] == 1) {
-               src="/image/red-icon.png";
-             };
-             var MyData =data['data'][i]['about'];
-             var about = MyData.substring(0,150);
-             marker = new google.maps.Marker({
+             if (data['data'][i]['status'] == 1) {
+               var src;
+               if( (data['data'][i]['type_id']) == 2) {
+                 src= "/image/green-icon.png";
+               }else if (data['data'][i]['type_id'] == 1) {
+                 src="/image/red-icon.png";
+               };
+               var MyData =data['data'][i]['about'];
+               var about = MyData.substring(0,150);
+               marker = new google.maps.Marker({
                  position: new google.maps.LatLng(data['data'][i]['lat'],data['data'][i]['lng']),
                  map: map,
                  title: data['data'][i]['title'],
                  content:"<div id='infow'>" +
-                    '<div class="infow-content">' +
-                      '<div class="infow-title"></div>' +
-                      "<img src='image/"+data['data'][i]['image']+"' height='115' width='100'>" +
-                      "<p>"+about+"</p>"+
-                    '</div>' +
-                  '</div>',
+                 '<div style="min-width:296px" class="infow-content">' +
+                //  '<div class="infow-title"></div>' +
+                 "<a href='/single/"+data['data'][i]['id']+"'><img src='image/"+data['data'][i]['image']+"' height='115' width='134'></a>" +
+                 "<p>"+about+"</p>"+
+                 '</div>' +
+                 '</div>',
                  animation: google.maps.Animation.DROP,
                  icon:src,
-             });
-             markers.push(marker);
+               });
+
+               markers.push(marker);
+             }
 
            };
              var info = new google.maps.InfoWindow();
              function manyInfo(mark, infowindow) {
              infowindow.setContent(mark.content);
              infowindow.open(map, mark);
+             $('.gm-style-iw').prev().addClass('myMap');
+             $('.gm-style-iw').next().css('top', '44px');
+             $('.gm-style-iw').css('margin-top', '37px');
+             $('.myMap div:nth-child(4)').css({
+               'top':'37px',
+               'height':'115px'
+             });
+              $('.myMap div:nth-child(2)').css({
+                'top':'37px',
+                'height':'115px'
+              });
+             $('.myMap div:nth-child(3)').children().last().css('top', '0px');
              marker.addListener('closeclick', function() {
                  infowindow.setMarker(null);
              });
@@ -133,6 +148,7 @@ $.ajax({
                var map = new google.maps.Map(document.getElementById('infoMap'), mapOptions);
                var marker;
                for ( i = 0; i < data['data'].length; i++) {
+                 if (data['data'][i]['status'] == 1) {
                  var src;
                  if( (data['data'][i]['type_id']) == 2) {
                     src= "/image/green-icon.png";
@@ -146,28 +162,47 @@ $.ajax({
                      map: map,
                      title: data['data'][i]['title'],
                      content:"<div id='infow'>" +
-                        '<div class="infow-content">' +
-                          '<div class="infow-title"></div>' +
-                          "<img src='image/"+data['data'][i]['image']+"' height='115' width='100'>" +
-                          "<p>"+about+"</p>"+
-                        '</div>' +
-                      '</div>',
+                    '<div style="min-width:296px" class="infow-content">' +
+                      // '<div class="infow-title"></div>' +
+                      "<a href='/single/"+data['data'][i]['id']+"'><img src='image/"+data['data'][i]['image']+"' height='115' width='134'></a>" +
+                      "<p>"+about+"</p>"+
+                    '</div>' +
+                  '</div>',
                      animation: google.maps.Animation.DROP,
                      icon:src,
                  });
                  markers.push(marker);
+               }
                };
                  var info = new google.maps.InfoWindow();
                  function manyInfo(mark, infowindow) {
                  infowindow.setContent(mark.content);
+
                  infowindow.open(map, mark);
+                 $('.gm-style-iw').prev().addClass('myMap');
+                 $('.gm-style-iw').next().css('top', '44px');
+                 $('.gm-style-iw').css('margin-top', '37px');
+                 $('.myMap div:nth-child(4)').css({
+                   'top':'37px',
+                   'height':'115px'
+                 });
+                 $('.myMap div:nth-child(2)').css({
+                   'top':'37px',
+                   'height':'115px'
+                 });
+             $('.myMap div:nth-child(3)').children().last().css('top', '0px');
                  markers.addListener('closeclick', function() {
                      infowindow.setMarker(null);
                  });
                }
                for (var i = 0; i < markers.length; i++) {
                    google.maps.event.addListener(markers[i], 'click', function() {
+                        map.setZoom(15);
                        manyInfo(this, info);
+                      map.setCenter(marker.getPosition());
+                   });
+                   google.maps.event.addListener(markers[i], 'closeclick', function() {
+                      alert("a");
                    });
                }
 

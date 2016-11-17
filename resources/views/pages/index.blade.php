@@ -15,6 +15,19 @@
   .closeLoad{
     display: none;
   }
+  .infow-title{
+    padding: 0px;
+  }
+  .infow-content img{
+    margin: 0px;
+    margin-right: 10px;
+  }
+  .infow-content .col-md-6{
+    padding: 0px;
+  }
+  .class_name{
+    height: 104px;
+  }
 </style>
   <!-- GOOGLEMAP SECTION START -->
   <section id="googlemap">
@@ -42,7 +55,9 @@
                        <select class="Test" id="acar">
                          <option name="location" value="all">Hamisi</option>
                          @foreach ($datas as $data)
-                           <option name="location" value="{{$data->location}}">{{$data->location}}</option>
+                           @if ($data->status == 1)
+                             <option name="location" value="{{$data->location}}">{{$data->location}}</option>
+                           @endif
                          @endforeach
                        </select>
                    </li>
@@ -61,7 +76,9 @@
                        <select class="Test" id="kategory">
                          <option  name="nov" value="all">Hamisi</option>
                          @foreach ($datas as $data)
-                           <option name="nov" value="{{$data->nov}}">{{$data->nov}}</option>
+                           @if ($data->status == 1)
+                             <option name="nov" value="{{$data->nov}}">{{$data->nov}}</option>
+                           @endif
                          @endforeach
                        </select>
                    </li>

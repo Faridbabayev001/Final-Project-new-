@@ -18,38 +18,6 @@
     transition: all .3s ease;
   }
 
-  //INPUT ROWS START
-  .row{
-    div:nth-child(1){ // Açar söz inputu
-      padding-left: 0;
-      padding-right: 0;
-      input{
-        border-radius: 0;
-      }
-    }
-    div:nth-child(2){  // Şəhər / Region inputu
-      padding-left: 0;
-      padding-right: 0;
-      input{
-        border-radius: 0;
-      }
-    }
-    div:nth-child(3){ // Kateqoriya inputu
-      padding-left: 0;
-      padding-right: 0;
-      input{
-        border-radius: 0;
-      }
-    }
-    div:nth-child(4){  // Submit button (search)
-      padding-left: 0;
-      padding-right: 0;
-      input{
-        border-radius: 0;
-      }
-    }
-    //INPUT ROWS END
-  }
 }
 #searchBoxDrag{
     top:7%;
@@ -78,26 +46,7 @@
             }
         }
     }
-    //.infopart{
-    //     display: none;
-    // }
-    // #moveButton, #searchButton, #infoButton{
-    //     padding: 8px 0 8px 15px;
-    //     width:60px;
-    //     height:45px;
-    //     background-color:#28353d;
-    //     float: left;s
-    // }
-    // #moveButton{
-    //     cursor: move;
-    // }
-    // #searchButton{
-    //     background: rgba(52,73,94,0.9);
-    //     background: transparent;
-    // }
-    // #infoButton{
-    //     padding: 8px 0 8px 25px;
-    // }
+
     p{
         padding: 10px;
         clear: both;
