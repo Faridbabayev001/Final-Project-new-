@@ -81,20 +81,17 @@ $.ajax({
            }
            for (var i = 0; i < markers.length; i++) {
                google.maps.event.addListener(markers[i], 'click', function() {
-                    map.setZoom(15);
+                    map.setZoom(13);
                    manyInfo(this, info);
                   map.setCenter(marker.getPosition());
                });
-               google.maps.event.addListener(markers[i], 'closeclick', function() {
-                  alert("a");
-               });
+
            }
 
            var markerCluster = new MarkerClusterer(map, markers, {
              imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m',
              maxZoom:8
          });
-
          },
   // timeout: 3000,
   beforeSend:function(){
@@ -167,13 +164,14 @@ $.ajax({
                }
                for (var i = 0; i < markers.length; i++) {
                    google.maps.event.addListener(markers[i], 'click', function() {
+                     map.setZoom(13);                       
                        manyInfo(this, info);
                    });
                }
 
                var markerCluster = new MarkerClusterer(map, markers, {
                  imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m',
-
+                maxZoom:8
              });
 
              },
