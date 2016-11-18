@@ -15,8 +15,6 @@
 							 @else
 								 <img class="img-responsive" src="{{url('image/prof.png')}}">
 							 @endif
-	                <label for="upload"><i class="fa fa-arrow-circle-o-up"></i> Yüklə</label>
-	                <input type="file" name="sekil" id="upload" class="hidden">
 
 	               <ul class="list-unstyled">
 	                   <li><a href="{{url('/profil')}}"><i class="fa fa-user" aria-hidden="true"></i><b> İstifadəçinin məlumatları</b></a></li>

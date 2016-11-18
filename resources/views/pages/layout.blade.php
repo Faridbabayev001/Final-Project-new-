@@ -59,8 +59,8 @@ use App\City;
                 </ul>
 
                   <ul class="nav navbar-nav navbar-right">
-                    <li><a {{Request::is('istek') ? "class=active" : ''}} href="{{url('/istek')}}"><i class="fa fa-plus"></i> İstək əlavə et</a></li>
-                    <li><a {{Request::is('destek') ? "class=active" : ''}} href="{{url('/destek')}}"><i class="fa fa-plus"></i> Dəstək ol</a></li>
+                    <li class="istek-elave-et"><a {{Request::is('istek') ? "class=active" : ''}} href="{{url('/istek')}}"><i class="fa fa-plus"></i> İstək əlavə et</a></li>
+                    <li class="destek-ol"><a {{Request::is('destek') ? "class=active" : ''}} href="{{url('/destek')}}"><i class="fa fa-plus destek-ol"></i> Dəstək ol</a></li>
                       <!-- Authentication Links -->
                       @if (Auth::guest())
                         <li><a href="#" data-toggle="modal" data-target="#myModal"><i class="fa fa-user-plus"></i> Qeydiyyat</a></li>
