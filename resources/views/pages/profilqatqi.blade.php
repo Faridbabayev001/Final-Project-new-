@@ -14,8 +14,6 @@
                      @else
                        <img class="img-responsive" src="{{url('image/prof.png')}}">
                      @endif
-                        <label for="file"><i class="fa fa-arrow-circle-o-up"></i> yüklə</label>
-                        <input type="file" name="image" id="file" class="hidden">
                         <ul class="list-unstyled">
                             <li><a href="{{url('/profil')}}"><i class="fa fa-user" aria-hidden="true"></i><b> İstifadəçinin məlumatları</b></a></li>
                             <li><a href="#"><i class="fa fa-lock" aria-hidden="true"></i> Şifrə dəyişdir</a></li>

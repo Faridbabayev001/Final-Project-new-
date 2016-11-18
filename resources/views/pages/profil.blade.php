@@ -19,7 +19,7 @@
                 </form>
                <ul class="list-unstyled">
                    <li><a href="#"><i class="fa fa-user" aria-hidden="true"></i><b> İstifadəçinin məlumatları</b></a></li>
-                   <li><a href=""><i class="fa fa-lock" aria-hidden="true"></i> Şifrə dəyişdir</a></li>
+                   <li><a href="/password/reset"><i class="fa fa-lock" aria-hidden="true"></i> Şifrə dəyişdir</a></li>
                    <li><a href="{{url('/isteklerim')}}"><i class="fa fa-thumb-tack" aria-hidden="true"></i> İstək qeydlərim</a></li>
                    <li><a href="{{url('/desteklerim')}}"><i class="fa fa-tags" aria-hidden="true"></i>Dəstəklərim</a></li>
                </ul>

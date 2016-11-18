@@ -111,32 +111,7 @@
         a{
           transition: all .3s ease;
         }
-        li:nth-child(1){
-          a{
-            transition: all .3s ease;
-            padding: 5px 10px 5px 10px;
-            margin-top: 10px;
-            margin-right: 10px;
-            background: #5DB124;
-            color: white;
-          }
-          i{
-            color: white;
-          }
-        }
-        li:nth-child(2){
-          a{
-            transition: all .3s ease;
-            padding: 5px 10px 5px 10px;
-            margin-top: 10px;
-            margin-right: 10px;
-            background: #CE2F2F;
-            color: white;
-          }
-          i{
-            color: white;
-          }
-        }
+
         a:hover{
           color: #2AB6FF;
         }
@@ -148,6 +123,40 @@
         i{
           margin-right: 3px;
           color: #2AB6FF;
+        }
+      }
+      .istek-elave-et{
+        a{
+          transition: all .3s ease;
+          padding: 5px 10px 5px 10px;
+          margin-top: 10px;
+          margin-right: 10px;
+          background: #5DB124;
+          color: white;
+          &:hover{
+            background-color: #4d941e;
+            color: white !important;
+          }
+        }
+        i{
+          color: white !important;
+        }
+      }
+      .destek-ol{
+        a{
+          transition: all .3s ease;
+          padding: 5px 10px 5px 10px;
+          margin-top: 10px;
+          margin-right: 10px;
+          background: #CE2F2F;
+          color: white;
+          &:hover{
+            background-color: #a62626;
+            color: white !important;
+          }
+        }
+        i{
+          color: white !important;
         }
       }
     }
