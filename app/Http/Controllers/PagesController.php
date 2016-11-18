@@ -32,16 +32,23 @@ class PagesController extends Controller
     if ($request->ajax()) {
       if ($request->ElanLocation =="all" && $request->ElanType =="all" && $request->ElanNov =="all") {
         $datalar=Elan::all();
+        $data = [
+          'data' => $datalar,
+        ];
+        return $data;
       }else if($request->ElanLocation !=="all" || $request->ElanType !=="all" || $request->ElanNov !=="all"){
         $datalar=Elan::where('location',$request->ElanLocation)
         ->orWhere('type_id',$request->ElanType)
         ->orWhere('nov',$request->ElanNov)
         ->get();
+      }else {
+        $datalar=Elan::all();
+        $data = [
+          'data' => $datalar,
+        ];
+        return $data;
       }
-      $data = [
-        'data' => $datalar,
-      ];
-      return $data;
+
     };
       return view('pages.index',compact('datas','datamaps','diff'));
   }

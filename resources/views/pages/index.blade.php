@@ -22,12 +22,6 @@
     margin: 0px;
     margin-right: 10px;
   }
-  .infow-content .col-md-6{
-    padding: 0px;
-  }
-  .class_name{
-    height: 104px;
-  }
 </style>
   <!-- GOOGLEMAP SECTION START -->
   <section id="googlemap">
