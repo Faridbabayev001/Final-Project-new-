@@ -29,19 +29,8 @@
      <div class="row">
        <div class="col-lg-12 padding0">
            <div id="searchBoxDrag">
-
-               {{-- <div id="moveButton">
-                     <i class="fa fa-arrows fa-2x"></i>
-               </div> --}}
-               {{-- <div id="searchButton" class="index3" data-index='1'>
-                   <i class="fa fa-search-minus fa-2x"></i>
-               </div> --}}
-               {{-- <div id="infoButton" class='index3' data-index='2'>
-                   <i class="fa fa-info fa-2x"></i>
-               </div> --}}
-
             <form id="mapSearch" class="form-inline" action="" method="POST">
-             {{-- <div class="searchpart clickedVer" data-info='1'> --}}
+
                  <ul>
                    <li>
                        <label> Şəhər/region :</label>

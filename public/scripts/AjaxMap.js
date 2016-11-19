@@ -45,29 +45,31 @@ $.ajax({
            var map = new google.maps.Map(document.getElementById('infoMap'), mapOptions);
            var marker;
            for ( i = 0; i < data['data'].length; i++) {
-             var src;
-             if( (data['data'][i]['type_id']) == 2) {
-                src= "/image/green-icon.png";
-             }else if (data['data'][i]['type_id'] == 1) {
-               src="/image/red-icon.png";
-             };
-             var MyData =data['data'][i]['about'];
-             var about = MyData.substring(0,150);
-             marker = new google.maps.Marker({
+             if (data['data'][i]['status'] == 1) {
+               var src;
+               if( (data['data'][i]['type_id']) == 2) {
+                 src= "/image/green-icon.png";
+               }else if (data['data'][i]['type_id'] == 1) {
+                 src="/image/red-icon.png";
+               };
+               var MyData =data['data'][i]['about'];
+               var about = MyData.substring(0,150);
+               marker = new google.maps.Marker({
                  position: new google.maps.LatLng(data['data'][i]['lat'],data['data'][i]['lng']),
                  map: map,
                  title: data['data'][i]['title'],
                  content:"<div id='infow'>" +
-                    '<div style="min-width:296px" class="infow-content">' +
-                      '<div class="infow-title"></div>' +
-                      "<a href='/image/"+data['data'][i]['id']+"'><img src='image/"+data['data'][i]['image']+"' height='115' width='134'></a>" +
-                      "<p>"+about+"</p>"+
-                    '</div>' +
-                  '</div>',
+                 '<div style="min-width:296px" class="infow-content">' +
+                 '<div class="infow-title"></div>' +
+                 "<a href='/image/"+data['data'][i]['id']+"'><img src='image/"+data['data'][i]['image']+"' height='115' width='134'></a>" +
+                 "<p>"+about+"</p>"+
+                 '</div>' +
+                 '</div>',
                  animation: google.maps.Animation.DROP,
                  icon:src,
-             });
-             markers.push(marker);
+               });
+               markers.push(marker);
+             }
            };
              var info = new google.maps.InfoWindow();
 
@@ -139,29 +141,31 @@ $.ajax({
                var map = new google.maps.Map(document.getElementById('infoMap'), mapOptions);
                var marker;
                for ( i = 0; i < data['data'].length; i++) {
-                 var src;
-                 if( (data['data'][i]['type_id']) == 2) {
-                    src= "/image/green-icon.png";
-                 }else if (data['data'][i]['type_id'] == 1) {
-                   src="/image/red-icon.png";
-                 };
-                 var MyData =data['data'][i]['about'];
-                 var about = MyData.substring(0,150);
-                 marker = new google.maps.Marker({
+                 if (data['data'][i]['status'] == 1) {
+                   var src;
+                   if( (data['data'][i]['type_id']) == 2) {
+                     src= "/image/green-icon.png";
+                   }else if (data['data'][i]['type_id'] == 1) {
+                     src="/image/red-icon.png";
+                   };
+                   var MyData =data['data'][i]['about'];
+                   var about = MyData.substring(0,150);
+                   marker = new google.maps.Marker({
                      position: new google.maps.LatLng(data['data'][i]['lat'],data['data'][i]['lng']),
                      map: map,
                      title: data['data'][i]['title'],
                      content:"<div id='infow'>" +
-                    '<div style="min-width:296px" class="infow-content">' +
-                      '<div class="infow-title"></div>' +
-                      "<a href='/image/"+data['data'][i]['id']+"'><img src='image/"+data['data'][i]['image']+"' height='115' width='134'></a>" +
-                      "<p>"+about+"</p>"+
-                    '</div>' +
-                  '</div>',
+                     '<div style="min-width:296px" class="infow-content">' +
+                     '<div class="infow-title"></div>' +
+                     "<a href='/image/"+data['data'][i]['id']+"'><img src='image/"+data['data'][i]['image']+"' height='115' width='134'></a>" +
+                     "<p>"+about+"</p>"+
+                     '</div>' +
+                     '</div>',
                      animation: google.maps.Animation.DROP,
                      icon:src,
-                 });
-                 markers.push(marker);
+                   });
+                   markers.push(marker);
+                 }
                };
                  var info = new google.maps.InfoWindow();
                  function manyInfo(mark, infowindow) {
