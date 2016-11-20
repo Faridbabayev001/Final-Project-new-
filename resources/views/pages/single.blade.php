@@ -54,7 +54,6 @@
                      İstəyin müddəti: {{$diff->m}} ay {{$diff->d}} gün
                    </p>
                  @endif
-
                    </div>
                 </div>
                 <p class="text-justify">{{$single->about}}</p>

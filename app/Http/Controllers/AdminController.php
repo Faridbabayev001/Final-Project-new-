@@ -20,7 +20,6 @@ class AdminController extends Controller
      $users=User::all();
      $istek = Elan::all()->where('type_id', 2);
      $isteksayi = count($istek);
-
      $destek = Elan::all()->where('type_id', 1);
      $desteksayi = count($destek);
 

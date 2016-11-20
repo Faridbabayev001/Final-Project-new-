@@ -22,6 +22,11 @@
     margin: 0px;
     margin-right: 10px;
   }
+  .InfoMap p{
+    padding-right: 25px;
+    padding-top: 5px;
+    text-align: justify;
+  }
 </style>
   <!-- GOOGLEMAP SECTION START -->
   <section id="googlemap">
@@ -29,8 +34,7 @@
      <div class="row">
        <div class="col-lg-12 padding0">
            <div id="searchBoxDrag">
-            <form id="mapSearch" class="form-inline" action="" method="POST">
-
+            <form id="mapSearch" class="form-inline" method="get">
                  <ul>
                    <li>
                        <label> Şəhər/region :</label>
@@ -66,12 +70,7 @@
                        </select>
                    </li>
                  </ul>
-             {{-- </div> --}}
            </form>
-           {{-- <div class="infopart sclickedVer" data-info='2'>
-             <p>This is map info content. You can add html content, image etc.. into this area. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
-           </div> --}}
-
            </div>
 
            <img class="Load openLoad closeLoad" src="{{url('image/info-loading.gif')}}">
@@ -105,22 +104,6 @@
                 <div class="news-location col-lg-12">
                   <p><i class="fa fa-map-marker"></i> {{$data->location}}</p>
                 </div>
-                                {{-- thumbnail icons
-                 <div class="news-stats col-lg-12">
-                  {{-- <ul class="list-inline">
-                    <li><i class="fa fa-eye"></i> {{$data->view}}</li>
-                    <li><i class="fa fa-calendar"></i>
-                      @if(!$diff->d == 0 && $diff->m == 0)
-                        {{$diff->d}} gün
-                      @elseif($diff->d == 0 && !$diff->m == 0)
-                        {{$diff->m}} ay
-                      @else
-                        {{$diff->m}} ay {{$diff->d}} gün
-                      @endif
-                    </li>
-                  </ul>
-                </div>
-                            end thumbnail icons  --}}
               </div>
               </div>
             @endif
@@ -147,20 +130,6 @@
                 <div class="news-location col-lg-12">
                   <p><i class="fa fa-map-marker"></i> {{$data->location}}</p>
                 </div>
-                <div class="news-stats col-lg-12">
-                  <ul class="list-inline">
-                    <li><i class="fa fa-eye"></i> {{$data->view}}</li>
-                    <li><i class="fa fa-calendar"></i>
-                      @if(!$diff->d == 0 && $diff->m == 0)
-                        {{$diff->d}} gün
-                      @elseif($diff->d == 0 && !$diff->m == 0)
-                        {{$diff->m}} ay
-                      @else
-                        {{$diff->m}} ay {{$diff->d}} gün
-                      @endif
-                    </li>
-                  </ul>
-                </div>
               </div>
               </div>
             @endif
@@ -170,7 +139,8 @@
     </div>
     </div>
   </section>
- <script type="text/javascript" src="scripts/main.js"></script>
+ {{-- <script type="text/javascript" src="scripts/main.js"></script> --}}
+ <script type="text/javascript" src="scripts/infobubble.js"></script>
 
         <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js">
       </script>

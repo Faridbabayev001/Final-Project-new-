@@ -34,18 +34,15 @@ class PagesController extends Controller
       $ElanType = $request->ElanType;
       $ElanNov = $request->ElanNov;
       $datalar=Elan::all();
-      if ($ElanLocation =="all" && $ElanType =="all" && $ElanNov =="all") {
-        $datalar=Elan::all();
-      }else if($ElanLocation !=="all" || $ElanType !=="all" || $ElanNov !=="all"){
-        $datalar=Elan::where('location',$ElanLocation)
-        ->orWhere('type_id',$ElanType)
-        ->orWhere('nov',$ElanNov)
-        ->get();
-      }
-      $data = [
-        'data' => $datalar,
-      ];
-      return $data;
+        if ($ElanLocation =="all" && $ElanType =="all" && $ElanNov =="all") {
+          $datalar=Elan::all();
+        }else if($ElanLocation !=="all" || $ElanType !=="all" || $ElanNov !=="all"){
+          $datalar=Elan::where('location',$ElanLocation)
+          ->orWhere('type_id',$ElanType)
+          ->orWhere('nov',$ElanNov)
+          ->get();
+        }
+      return $datalar;
     };
       return view('pages.index',compact('datas','datamaps','diff'));
   }

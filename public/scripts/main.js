@@ -11,30 +11,14 @@
           return false;
       };
  });
-
+ history.pushState(null, null, document.URL);
+ window.addEventListener('popstate', function () {
+ window.location.replace('/');
+ });
  //index-de drag ishlemesi ucun
- // $('#searchBoxDrag').on('mousedown',funsction() {
      $('#searchBoxDrag').draggable({
           containment: '#infoMap'
       });
-    //  $('#moveButton').on('mousedown',function(event) {
-    //     $('#searchBoxDrag').draggable({
-    //          containment: '#infoMap'
-    //      });
-    //         $('#searchBoxDrag').draggable('enable');
-    //  });
-    //   $('#moveButton').on('mouseup',function(event) {
-    //       $('#searchBoxDrag').draggable('disable');
-    //   });
-    //  $('.index3').click(function(event) {
-    //     var t = $(this);
-    //     var data = t.attr('data-index');
-    //     $('.index3').css('background', '#28353d');
-    //     console.log(data);
-    //     $('.clickedVer').hide();
-    //     $('.clickedVer[data-info="'+data+'"]').show();
-    //     t.css('background', 'transparent');
-    //   });
  //index drag end
  var city;
  $('#seherler').change(function(){
